@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev:tsc": "npx tsc --watch",
+    "dev:esbuild": "npx esbuild dist/index.js --watch --splitting --bundle --target=es2020 --outdir=build --format=esm --external:*.woff2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hawmex/portfolio.git"
