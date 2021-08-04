@@ -65,13 +65,13 @@ class AppWidget extends Nexwidget {
 
   addedCallback() {
     super.addedCallback();
-    setInterval(() => (this.num = new Date().toLocaleTimeString('fa-IR')), 1000);
+    setInterval(() => (this.num = new Date().toLocaleDateString('fa-IR')), 1000);
   }
 
   get template(): NexwidgetTemplate {
     return html`
-      <typography-widget variant="text">${this.num}</typography-widget>
-      <button-widget text="account" variant="solid" icon="person"></button-widget>
+      <typography-widget variant="text">Hello ${this.num}</typography-widget>
+      <button-widget text="account حساب" variant="solid"></button-widget>
     `;
   }
 }

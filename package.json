@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Hawmex/portfolio#readme",
   "dependencies": {
-    "nexinterface": "^1.0.4",
+    "nexinterface": "^1.0.7",
     "nexwidget": "^4.3.2"
   },
   "devDependencies": {
