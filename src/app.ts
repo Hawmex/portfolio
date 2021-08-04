@@ -1,7 +1,7 @@
 import { css, html, Nexwidget, NexwidgetTemplate } from 'nexwidget';
 
-import './widgets/typography.js';
-import './widgets/button.js';
+import 'nexinterface/dist/typography/typography.js';
+import 'nexinterface/dist/button/button.js';
 
 declare global {
   interface HTMLElementTagNameMap {
