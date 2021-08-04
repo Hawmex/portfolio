@@ -114,7 +114,7 @@ class TypographyWidget extends Nexwidget {
   get updateOrSlotChangeAnimation(): NexwidgetAnimation {
     return [
       [
-        { opacity: '0', transform: 'translateY(-16px) rotateX(-60deg)' },
+        { opacity: '0', transform: 'translateY(-16px) rotateX(-90deg)' },
         { opacity: '1', transform: 'translateY(0px) rotateX(0deg)' },
       ],
       {
