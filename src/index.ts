@@ -10,7 +10,7 @@ declare global {
 
 class AppProvider extends Nexwidget {
   get template(): NexwidgetTemplate {
-    return html`<app-widget></app-widget>`;
+    return html`<app-widget dir="rtl"></app-widget>`;
   }
 }
 
