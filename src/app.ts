@@ -1,4 +1,7 @@
 import { AppScaffold } from 'nexinterface/dist/app-scaffold/app-scaffold.js';
+import 'nexinterface/dist/button/button.js';
+import 'nexinterface/dist/card/card.js';
+import 'nexinterface/dist/card/cards-grid.js';
 import 'nexinterface/dist/dialog/dialog.js';
 import { addDialog } from 'nexinterface/dist/dialog/dialog.js';
 import 'nexinterface/dist/drawer/drawer.js';
@@ -22,7 +25,7 @@ class AppWidget extends AppScaffold {
       ...super.styles,
       css`
         :host {
-          grid-template-rows: 0px max-content;
+          grid-template-rows: 0px max-content 1fr 0px 0px;
         }
       `,
     ];
@@ -30,9 +33,16 @@ class AppWidget extends AppScaffold {
 
   addedCallback() {
     super.addedCallback();
-    setTopBarOptions({ leading: { icon: 'menu', action: activateDrawer } });
+
+    setTopBarOptions({
+      leading: { icon: 'menu', action: activateDrawer },
+      headline: 'سلام',
+      leftSlot: html` <button-widget variant="text" icon="search"></button-widget> `,
+    });
+
     setTimeout(() => addSnackbar({ text: 'های' }), 1000);
     setTimeout(() => addSnackbar({ text: 'بای' }), 2000);
+
     setTimeout(
       () =>
         addDialog({
@@ -41,20 +51,43 @@ class AppWidget extends AppScaffold {
         }),
       3000,
     );
+
     setTimeout(
       () =>
         addDialog({
           headline: 'بای',
           body: html`<typography-widget variant="text">بای</typography-widget>`,
+          button: {
+            text: 'وای',
+            action: () => {},
+          },
         }),
       4000,
+    );
+
+    setTimeout(
+      () => setTopBarOptions({ headline: 'خیابان', tabs: ['یک', 'دو'], activeTab: 1 }),
+      6000,
     );
   }
 
   get template(): NexwidgetTemplate {
     return html`
-      <drawer-widget></drawer-widget>
-      <top-bar-widget></top-bar-widget>
+      <drawer-widget headline="اپ" text="اپلیکیشن">
+        <button-widget variant="menu" text="یک" icon="person"></button-widget>
+      </drawer-widget>
+      <top-bar-widget app-name="اپ"></top-bar-widget>
+      <div>
+        <cards-grid-widget>
+          <card-widget
+            image-src="https://avatars.githubusercontent.com/u/54506231?v=4"
+            headline="aa"
+          >
+            <typography-widget variant="text" slot="body">abc</typography-widget>
+            <button-widget variant="text" text="abc" slot="buttons"></button-widget>
+          </card-widget>
+        </cards-grid-widget>
+      </div>
       <dialog-widget></dialog-widget>
       <snackbar-widget></snackbar-widget>
     `;
