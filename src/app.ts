@@ -27,6 +27,10 @@ class AppWidget extends AppScaffold {
         :host {
           grid-template-rows: 0px max-content 1fr 0px 0px;
         }
+
+        :host div {
+          overflow: auto;
+        }
       `,
     ];
   }
@@ -66,7 +70,7 @@ class AppWidget extends AppScaffold {
     );
 
     setTimeout(
-      () => setTopBarOptions({ headline: 'خیابان', tabs: ['یک', 'دو'], activeTab: 1 }),
+      () => setTopBarOptions({ headline: 'خیابان', tabs: ['یک', 'دو'], activeTab: 0 }),
       6000,
     );
   }
@@ -84,6 +88,7 @@ class AppWidget extends AppScaffold {
             headline="واو"
           >
             <typography-widget variant="text" slot="body">هااا</typography-widget>
+            <button-widget variant="text" icon="add_shopping_cart" slot="icons"></button-widget>
             <button-widget variant="text" text="عااا" slot="buttons"></button-widget>
           </card-widget>
         </cards-grid-widget>
