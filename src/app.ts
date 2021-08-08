@@ -81,10 +81,10 @@ class AppWidget extends AppScaffold {
         <cards-grid-widget>
           <card-widget
             image-src="https://avatars.githubusercontent.com/u/54506231?v=4"
-            headline="aa"
+            headline="واو"
           >
-            <typography-widget variant="text" slot="body">abc</typography-widget>
-            <button-widget variant="text" text="abc" slot="buttons"></button-widget>
+            <typography-widget variant="text" slot="body">هااا</typography-widget>
+            <button-widget variant="text" text="عااا" slot="buttons"></button-widget>
           </card-widget>
         </cards-grid-widget>
       </div>
