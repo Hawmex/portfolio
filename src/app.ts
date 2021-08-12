@@ -135,7 +135,6 @@ export class AppWidget extends AppScaffold {
               icon="open_in_new"
             ></button-widget>
           </a>
-
           <chips-container-widget>
             <chip-widget>توسعه Full-Stack</chip-widget>
             <chip-widget>نمره کامل PWA</chip-widget>
@@ -149,6 +148,29 @@ export class AppWidget extends AppScaffold {
               '/assets/health-team-app-shop.png',
               '/assets/health-team-app-home-dark.png',
               '/assets/health-team-app-shop-dark.png',
+            ]}
+          ></carousel-widget>
+          <a href="https://noter-279d9.web.app" target="_blank"
+            ><button-widget
+              style="margin: 0px 8px"
+              variant="text"
+              text="اپلیکیشن وب نوتر"
+              icon="open_in_new"
+            ></button-widget>
+          </a>
+          <chips-container-widget>
+            <chip-widget>توسعه Front-End</chip-widget>
+            <chip-widget>رابط کاربری Material</chip-widget>
+            <chip-widget>React</chip-widget>
+            <chip-widget>Firebase Auth</chip-widget>
+            <chip-widget>Firebase Firestore</chip-widget>
+          </chips-container-widget>
+          <carousel-widget
+            .imageSrcs=${[
+              '/assets/noter-app-auth.png',
+              '/assets/noter-app-home.png',
+              '/assets/noter-app-auth-mobile.png',
+              '/assets/noter-app-home-mobile.png',
             ]}
           ></carousel-widget>
         </section-widget>
