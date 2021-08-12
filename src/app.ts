@@ -4,6 +4,8 @@ import 'nexinterface/dist/section/section.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
 import './widget/carousel.js';
+import './widget/chip.js';
+import './widget/chips-container.js';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -11,7 +13,7 @@ declare global {
   }
 }
 
-class AppWidget extends AppScaffold {
+export class AppWidget extends AppScaffold {
   static get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -24,19 +26,54 @@ class AppWidget extends AppScaffold {
           justify-content: center;
           background-color: var(--surfaceColor);
 
-          --primaryColor: #0076c5;
+          --primaryColor: #42a5f5;
         }
 
         :host .wrapper {
           width: max-content;
-          max-width: 100vw;
-          display: grid;
+          max-width: 100%;
+          display: block;
           margin: auto;
         }
 
         :host a {
           color: var(--primaryColor);
           text-decoration: none;
+        }
+
+        :host .email-button {
+          --primaryColor: #ef5350;
+        }
+
+        :host .github-button {
+          --primaryColor: #24292f;
+        }
+
+        :host .profile {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 8px 16px;
+        }
+
+        :host .profile img {
+          border-radius: 8px;
+          width: 256px;
+          max-width: 100%;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :host .github-button {
+            --primaryColor: #ffffff;
+            --onPrimaryColor: #24292f;
+          }
+        }
+
+        @media (max-width: 640px) {
+          :host .profile img {
+            width: 100%;
+          }
         }
       `,
     ];
@@ -47,47 +84,65 @@ class AppWidget extends AppScaffold {
       <div class="wrapper">
         <section-widget variant="buttons">
           <a slot="icons" href="mailto:itshawmex@gmail.com" target="_blank">
-            <button-widget
-              style="--primaryColor: #aa0f3e;"
-              variant="text"
-              icon="mail"
-            ></button-widget>
+            <button-widget class="email-button" variant="text" icon="mail"></button-widget>
           </a>
           <a slot="icons" href="https://t.me/hawmex" target="_blank">
             <button-widget slot="icons" variant="text" icon="telegram"></button-widget>
           </a>
           <a slot="buttons" href="https://github.com/Hawmex" target="_blank">
-            <button-widget style="--primaryColor: #24292f;" variant="solid" text="گیتهاب من">
+            <button-widget class="github-button" variant="text" text="گیتهاب من" icon="open_in_new">
             </button-widget>
           </a>
         </section-widget>
+        <div class="profile">
+          <img src="/assets/profile.jpg" />
+        </div>
         <section-widget variant="paragraphs">
           <typography-widget variant="top-bar">حامد اعراب</typography-widget>
-          <typography-widget variant="text">
-            درود. من حامد اعراب هستم، یک توسعه‌دهنده‌ی وب در بخش‌های فرانت‌اند و بک‌اند.
+          <typography-widget style="text-align: justify" variant="text">
+            سلام. من حامد اعراب، دانشجوی کارشناسی مهندسی صنایع در دانشگاه صنعتی امیرکبیر هستم. سه
+            سال هست که توسعه‌دهندگی وب در بخش‌های فرانت‌اند و بک‌اند رو شروع کردم و یک ساله که به
+            صورت جدی اون رو دنبال می‌کنم.
           </typography-widget>
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">زبان‌ها</typography-widget>
-          <typography-widget dir="auto" variant="text">JavaScript (ESNext)</typography-widget>
-          <typography-widget dir="auto" variant="text">TypeScript</typography-widget>
-          <typography-widget dir="auto" variant="text">HTML</typography-widget>
-          <typography-widget dir="auto" variant="text">CSS</typography-widget>
+          <chips-container-widget dir="auto">
+            <chip-widget>JavaScript (ESNext)</chip-widget>
+            <chip-widget>TypeScript</chip-widget>
+            <chip-widget>HTML</chip-widget>
+            <chip-widget>CSS</chip-widget>
+            <chip-widget>C</chip-widget>
+          </chips-container-widget>
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">مهارت‌ها</typography-widget>
-          <typography-widget dir="auto" variant="text">Front-End</typography-widget>
-          <typography-widget dir="auto" variant="text">Back-End</typography-widget>
+          <chips-container-widget dir="auto">
+            <chip-widget>Front-End</chip-widget>
+            <chip-widget>Back-End</chip-widget>
+            <chip-widget>ExpressJS</chip-widget>
+            <chip-widget>MongoDB</chip-widget>
+            <chip-widget>Web Components</chip-widget>
+          </chips-container-widget>
         </section-widget>
         <section-widget variant="paragraphs">
-          <typography-widget variant="top-bar">نمونه‌کارها</typography-widget>
-          <typography-widget variant="headline">
-            <a href="https://healthteam.herokuapp.com" target="_blank">اپلیکیشن وب تیم سلامتی</a>
-          </typography-widget>
-          <typography-widget variant="text">توسعه Full-Stack</typography-widget>
-          <typography-widget variant="text">نمره کامل PWA</typography-widget>
-          <typography-widget variant="text">رابط کاربری Material</typography-widget>
-          <typography-widget variant="text">متصل به درگاه پرداخت</typography-widget>
+          <typography-widget variant="headline">نمونه‌کارها</typography-widget>
+          <a href="https://healthteam.herokuapp.com" target="_blank"
+            ><button-widget
+              style="margin: 0px 8px"
+              variant="text"
+              text="اپلیکیشن وب تیم سلامتی"
+              icon="open_in_new"
+            ></button-widget>
+          </a>
+
+          <chips-container-widget>
+            <chip-widget>توسعه Full-Stack</chip-widget>
+            <chip-widget>نمره کامل PWA</chip-widget>
+            <chip-widget>رابط کاربری Material</chip-widget>
+            <chip-widget>تجربه‌ی کاربری نزدیک به Native</chip-widget>
+            <chip-widget>متصل به درگاه پرداخت</chip-widget>
+          </chips-container-widget>
           <carousel-widget
             .imageSrcs=${[
               '/assets/health-team-app-home.png',
