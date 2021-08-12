@@ -23,7 +23,7 @@
     "nexwidget": "^5.0.0"
   },
   "devDependencies": {
-    "esbuild": "^0.12.18",
+    "esbuild": "^0.12.19",
     "typescript": "^4.3.5"
   }
 }
