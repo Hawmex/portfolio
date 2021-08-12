@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:server": "npx live-server",
+    "dev:server": "cd public && npx live-server",
     "dev:tsc": "npx tsc --watch",
     "dev:esbuild": "npx esbuild dist/index.js --watch --splitting --bundle --target=es2020 --outdir=public/build --format=esm --external:*.woff2"
   },

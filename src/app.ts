@@ -28,9 +28,15 @@ class AppWidget extends AppScaffold {
         }
 
         :host .wrapper {
-          width: 100vw;
+          width: max-content;
+          max-width: 100vw;
           display: grid;
           margin: auto;
+        }
+
+        :host a {
+          color: var(--primaryColor);
+          text-decoration: none;
         }
       `,
     ];
@@ -40,19 +46,20 @@ class AppWidget extends AppScaffold {
     return html`
       <div class="wrapper">
         <section-widget variant="buttons">
-          <button-widget
-            style="--primaryColor: #aa0f3e;"
-            slot="icons"
-            variant="text"
-            icon="mail"
-          ></button-widget>
-          <button-widget slot="icons" variant="text" icon="telegram"></button-widget>
-          <button-widget
-            style="--primaryColor: #24292f;"
-            slot="buttons"
-            variant="solid"
-            text="گیتهاب من"
-          ></button-widget>
+          <a slot="icons" href="mailto:itshawmex@gmail.com" target="_blank">
+            <button-widget
+              style="--primaryColor: #aa0f3e;"
+              variant="text"
+              icon="mail"
+            ></button-widget>
+          </a>
+          <a slot="icons" href="https://t.me/hawmex" target="_blank">
+            <button-widget slot="icons" variant="text" icon="telegram"></button-widget>
+          </a>
+          <a slot="buttons" href="https://github.com/Hawmex" target="_blank">
+            <button-widget style="--primaryColor: #24292f;" variant="solid" text="گیتهاب من">
+            </button-widget>
+          </a>
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="top-bar">حامد اعراب</typography-widget>
@@ -69,23 +76,24 @@ class AppWidget extends AppScaffold {
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">مهارت‌ها</typography-widget>
-          <typography-widget dir="auto" variant="text">Frot-End</typography-widget>
+          <typography-widget dir="auto" variant="text">Front-End</typography-widget>
           <typography-widget dir="auto" variant="text">Back-End</typography-widget>
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="top-bar">نمونه‌کارها</typography-widget>
-          <typography-widget variant="headline">اپلیکیشن وب تیم سلامتی</typography-widget>
+          <typography-widget variant="headline">
+            <a href="https://healthteam.herokuapp.com" target="_blank">اپلیکیشن وب تیم سلامتی</a>
+          </typography-widget>
           <typography-widget variant="text">توسعه Full-Stack</typography-widget>
           <typography-widget variant="text">نمره کامل PWA</typography-widget>
           <typography-widget variant="text">رابط کاربری Material</typography-widget>
           <typography-widget variant="text">متصل به درگاه پرداخت</typography-widget>
           <carousel-widget
-            dir="rtl"
             .imageSrcs=${[
-              '/public/assets/health-team-app-home.png',
-              '/public/assets/health-team-app-shop.png',
-              '/public/assets/health-team-app-home-dark.png',
-              '/public/assets/health-team-app-shop-dark.png',
+              '/assets/health-team-app-home.png',
+              '/assets/health-team-app-shop.png',
+              '/assets/health-team-app-home-dark.png',
+              '/assets/health-team-app-shop-dark.png',
             ]}
           ></carousel-widget>
         </section-widget>
