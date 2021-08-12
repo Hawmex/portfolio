@@ -11,7 +11,7 @@ import { addSnackbar } from 'nexinterface/dist/snackbar/snackbar.js';
 import 'nexinterface/dist/top-bar/top-bar.js';
 import { setTopBarOptions } from 'nexinterface/dist/top-bar/top-bar.js';
 import 'nexinterface/dist/typography/typography.js';
-import { css, html, NexwidgetTemplate } from 'nexwidget';
+import { css, html, WidgetTemplate } from 'nexwidget';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -75,7 +75,7 @@ class AppWidget extends AppScaffold {
     );
   }
 
-  get template(): NexwidgetTemplate {
+  get template(): WidgetTemplate {
     return html`
       <drawer-widget headline="اپ" text="اپلیکیشن">
         <button-widget variant="menu" text="یک" icon="person"></button-widget>

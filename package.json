@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/Hawmex/portfolio#readme",
   "dependencies": {
-    "nexinterface": "^1.5.10",
-    "nexwidget": "^4.5.4"
+    "nexinterface": "^2.0.0",
+    "nexwidget": "^5.0.0"
   },
   "devDependencies": {
     "esbuild": "^0.12.18",
