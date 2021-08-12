@@ -1,17 +1,9 @@
 import { AppScaffold } from 'nexinterface/dist/app-scaffold/app-scaffold.js';
 import 'nexinterface/dist/button/button.js';
-import 'nexinterface/dist/card/card.js';
-import 'nexinterface/dist/card/cards-grid.js';
-import 'nexinterface/dist/dialog/dialog.js';
-import { addDialog } from 'nexinterface/dist/dialog/dialog.js';
-import 'nexinterface/dist/drawer/drawer.js';
-import { activateDrawer } from 'nexinterface/dist/drawer/drawer.js';
-import 'nexinterface/dist/snackbar/snackbar.js';
-import { addSnackbar } from 'nexinterface/dist/snackbar/snackbar.js';
-import 'nexinterface/dist/top-bar/top-bar.js';
-import { setTopBarOptions } from 'nexinterface/dist/top-bar/top-bar.js';
+import 'nexinterface/dist/section/section.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
+import './widget/carousel.js';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -25,76 +17,79 @@ class AppWidget extends AppScaffold {
       ...super.styles,
       css`
         :host {
-          grid-template-rows: 0px max-content 1fr 0px 0px;
+          display: flex;
+          overflow: hidden auto;
+          box-sizing: border-box;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--surfaceColor);
+
+          --primaryColor: #0076c5;
         }
 
-        :host div {
-          overflow: auto;
+        :host .wrapper {
+          width: 100vw;
+          display: grid;
+          margin: auto;
         }
       `,
     ];
   }
 
-  addedCallback() {
-    super.addedCallback();
-
-    setTopBarOptions({
-      leading: { icon: 'menu', action: activateDrawer },
-      headline: 'سلام',
-      leftSlot: html` <button-widget variant="text" icon="search"></button-widget> `,
-    });
-
-    setTimeout(() => addSnackbar({ text: 'های' }), 1000);
-    setTimeout(() => addSnackbar({ text: 'بای' }), 2000);
-
-    setTimeout(
-      () =>
-        addDialog({
-          headline: 'های',
-          body: html`<typography-widget variant="text">های</typography-widget>`,
-        }),
-      3000,
-    );
-
-    setTimeout(
-      () =>
-        addDialog({
-          headline: 'بای',
-          body: html`<typography-widget variant="text">بای</typography-widget>`,
-          button: {
-            text: 'وای',
-            action: () => {},
-          },
-        }),
-      4000,
-    );
-
-    setTimeout(
-      () => setTopBarOptions({ headline: 'خیابان', tabs: ['یک', 'دو'], activeTab: 0 }),
-      6000,
-    );
-  }
-
   get template(): WidgetTemplate {
     return html`
-      <drawer-widget headline="اپ" text="اپلیکیشن">
-        <button-widget variant="menu" text="یک" icon="person"></button-widget>
-      </drawer-widget>
-      <top-bar-widget app-name="اپ"></top-bar-widget>
-      <div>
-        <cards-grid-widget>
-          <card-widget
-            image-src="https://avatars.githubusercontent.com/u/54506231?v=4"
-            headline="واو"
-          >
-            <typography-widget variant="text" slot="body">هااا</typography-widget>
-            <button-widget variant="text" icon="add_shopping_cart" slot="icons"></button-widget>
-            <button-widget variant="text" text="عااا" slot="buttons"></button-widget>
-          </card-widget>
-        </cards-grid-widget>
+      <div class="wrapper">
+        <section-widget variant="buttons">
+          <button-widget
+            style="--primaryColor: #aa0f3e;"
+            slot="icons"
+            variant="text"
+            icon="mail"
+          ></button-widget>
+          <button-widget slot="icons" variant="text" icon="telegram"></button-widget>
+          <button-widget
+            style="--primaryColor: #24292f;"
+            slot="buttons"
+            variant="solid"
+            text="گیتهاب من"
+          ></button-widget>
+        </section-widget>
+        <section-widget variant="paragraphs">
+          <typography-widget variant="top-bar">حامد اعراب</typography-widget>
+          <typography-widget variant="text">
+            درود. من حامد اعراب هستم، یک توسعه‌دهنده‌ی وب در بخش‌های فرانت‌اند و بک‌اند.
+          </typography-widget>
+        </section-widget>
+        <section-widget variant="paragraphs">
+          <typography-widget variant="headline">زبان‌ها</typography-widget>
+          <typography-widget dir="auto" variant="text">JavaScript (ESNext)</typography-widget>
+          <typography-widget dir="auto" variant="text">TypeScript</typography-widget>
+          <typography-widget dir="auto" variant="text">HTML</typography-widget>
+          <typography-widget dir="auto" variant="text">CSS</typography-widget>
+        </section-widget>
+        <section-widget variant="paragraphs">
+          <typography-widget variant="headline">مهارت‌ها</typography-widget>
+          <typography-widget dir="auto" variant="text">Frot-End</typography-widget>
+          <typography-widget dir="auto" variant="text">Back-End</typography-widget>
+        </section-widget>
+        <section-widget variant="paragraphs">
+          <typography-widget variant="top-bar">نمونه‌کارها</typography-widget>
+          <typography-widget variant="headline">اپلیکیشن وب تیم سلامتی</typography-widget>
+          <typography-widget variant="text">توسعه Full-Stack</typography-widget>
+          <typography-widget variant="text">نمره کامل PWA</typography-widget>
+          <typography-widget variant="text">رابط کاربری Material</typography-widget>
+          <typography-widget variant="text">متصل به درگاه پرداخت</typography-widget>
+          <carousel-widget
+            dir="rtl"
+            .imageSrcs=${[
+              '/public/assets/health-team-app-home.png',
+              '/public/assets/health-team-app-shop.png',
+              '/public/assets/health-team-app-home-dark.png',
+              '/public/assets/health-team-app-shop-dark.png',
+            ]}
+          ></carousel-widget>
+        </section-widget>
       </div>
-      <dialog-widget></dialog-widget>
-      <snackbar-widget></snackbar-widget>
     `;
   }
 }
