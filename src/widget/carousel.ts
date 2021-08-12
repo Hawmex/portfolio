@@ -24,14 +24,14 @@ export class CarouselWidget extends Nexwidget {
           scroll-padding: 32px;
           overflow: auto hidden;
           width: max-content;
-          max-width: 100vw;
+          max-width: 100%;
         }
 
         :host .images-container {
           display: grid;
           box-sizing: border-box;
           gap: 16px;
-          padding: 0px 16px;
+          padding: 16px;
           width: max-content;
           grid-auto-flow: column;
         }
