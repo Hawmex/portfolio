@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-class AppProvider extends Nexwidget {
+export class AppProvider extends Nexwidget {
   get template(): WidgetTemplate {
     return html`<app-widget dir="rtl"></app-widget>`;
   }
