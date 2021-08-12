@@ -139,6 +139,7 @@ export class AppWidget extends AppScaffold {
             <chip-widget>توسعه Full-Stack</chip-widget>
             <chip-widget>نمره کامل PWA</chip-widget>
             <chip-widget>رابط کاربری Material</chip-widget>
+            <chip-widget>Dark Mode خودکار و هماهنگ با دستگاه</chip-widget>
             <chip-widget>تجربه‌ی کاربری نزدیک به Native</chip-widget>
             <chip-widget>متصل به درگاه پرداخت</chip-widget>
           </chips-container-widget>
