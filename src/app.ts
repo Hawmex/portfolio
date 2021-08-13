@@ -61,10 +61,23 @@ export class AppWidget extends AppScaffold {
           padding: 8px 16px;
         }
 
+        @keyframes pop {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
         :host .profile img {
           border-radius: 8px;
           width: 256px;
           max-width: 100%;
+          animation: pop var(--durationLvl2) var(--deceleratedEase);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -100,7 +113,7 @@ export class AppWidget extends AppScaffold {
           </external-link-component>
         </section-widget>
         <div class="profile">
-          <img src="/assets/profile.jpg" />
+          <img loading="lazy" src="/assets/profile.jpg" alt="profile photo" />
         </div>
         <section-widget variant="paragraphs">
           <typography-widget variant="top-bar">حامد اعراب</typography-widget>
