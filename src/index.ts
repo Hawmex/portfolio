@@ -11,7 +11,7 @@ declare global {
 
 export class AppProvider extends Nexinterface {
   get template(): WidgetTemplate {
-    return html`<app-widget></app-widget>`;
+    return html`<app-widget dir="rtl"></app-widget>`;
   }
 }
 

@@ -5,10 +5,10 @@ import 'nexinterface/dist/drawer/drawer.js';
 import 'nexinterface/dist/section/section.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
-import './widget/carousel.js';
-import './widget/chip.js';
-import './widget/chips-container.js';
-import './widget/external-link.js';
+import './components/external-link.js';
+import './widgets/carousel.js';
+import './widgets/chip.js';
+import './widgets/chips-container.js';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -88,16 +88,16 @@ export class AppWidget extends AppScaffold {
       <dialog-widget></dialog-widget>
       <div class="wrapper">
         <section-widget variant="buttons">
-          <external-link-widget slot="icons" link="mailto:itshawmex@gmail.com">
+          <external-link-component slot="icons" link="mailto:itshawmex@gmail.com">
             <button-widget class="email-button" variant="text" icon="mail"></button-widget>
-          </external-link-widget>
-          <external-link-widget slot="icons" link="https://t.me/hawmex">
+          </external-link-component>
+          <external-link-component slot="icons" link="https://t.me/hawmex">
             <button-widget variant="text" icon="telegram"></button-widget>
-          </external-link-widget>
-          <external-link-widget slot="buttons" link="https://github.com/Hawmex">
+          </external-link-component>
+          <external-link-component slot="buttons" link="https://github.com/Hawmex">
             <button-widget class="github-button" variant="text" text="گیتهاب من" icon="open_in_new">
             </button-widget>
-          </external-link-widget>
+          </external-link-component>
         </section-widget>
         <div class="profile">
           <img src="/assets/profile.jpg" />
@@ -116,10 +116,13 @@ export class AppWidget extends AppScaffold {
             نهایت nexinterface هم مجموعه‌ای از ویجت‌های طراحی material هست که با استفاده از
             nexwidget توسعه داده شده.
           </typography-widget>
+          <typography-widget style="text-align: justify" variant="text">
+            همچنین تسلط خوبی به زبان انگلیسی دارم و مستندات به زبان انگلیسی رو به خوبی متوجه میشم.
+          </typography-widget>
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">زبان‌ها</typography-widget>
-          <chips-container-widget>
+          <chips-container-widget dir="auto">
             <chip-widget>JavaScript (ESNext)</chip-widget>
             <chip-widget>TypeScript</chip-widget>
             <chip-widget>HTML</chip-widget>
@@ -129,7 +132,7 @@ export class AppWidget extends AppScaffold {
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">مهارت‌ها</typography-widget>
-          <chips-container-widget>
+          <chips-container-widget dir="auto">
             <chip-widget>Front-End</chip-widget>
             <chip-widget>Back-End</chip-widget>
             <chip-widget>ExpressJS</chip-widget>
@@ -141,15 +144,15 @@ export class AppWidget extends AppScaffold {
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">نمونه‌کارها</typography-widget>
-          <external-link-widget link="https://healthteam.herokuapp.com"
+          <external-link-component link="https://healthteam.herokuapp.com"
             ><button-widget
               style="margin: 0px 8px"
               variant="text"
               text="اپلیکیشن وب تیم سلامتی"
               icon="open_in_new"
             ></button-widget>
-          </external-link-widget>
-          <chips-container-widget>
+          </external-link-component>
+          <chips-container-widget dir="auto">
             <chip-widget>توسعه Full-Stack</chip-widget>
             <chip-widget>نمره کامل PWA</chip-widget>
             <chip-widget>رابط کاربری Material</chip-widget>
@@ -162,7 +165,6 @@ export class AppWidget extends AppScaffold {
             <chip-widget>Nexstate</chip-widget>
           </chips-container-widget>
           <carousel-widget
-            style="direction: rtl;"
             .imageSrcs=${[
               '/assets/health-team-app-home.png',
               '/assets/health-team-app-shop.png',
@@ -170,15 +172,15 @@ export class AppWidget extends AppScaffold {
               '/assets/health-team-app-shop-dark.png',
             ]}
           ></carousel-widget>
-          <external-link-widget link="https://noter-279d9.web.app"
+          <external-link-component link="https://noter-279d9.web.app"
             ><button-widget
               style="margin: 0px 8px"
               variant="text"
               text="اپلیکیشن وب Noter"
               icon="open_in_new"
             ></button-widget>
-          </external-link-widget>
-          <chips-container-widget>
+          </external-link-component>
+          <chips-container-widget dir="auto">
             <chip-widget>توسعه Front-End</chip-widget>
             <chip-widget>رابط کاربری Material</chip-widget>
             <chip-widget>React</chip-widget>
@@ -187,7 +189,6 @@ export class AppWidget extends AppScaffold {
             <chip-widget>Firebase Firestore</chip-widget>
           </chips-container-widget>
           <carousel-widget
-            style="direction: rtl;"
             .imageSrcs=${[
               '/assets/noter-app-auth.png',
               '/assets/noter-app-home.png',

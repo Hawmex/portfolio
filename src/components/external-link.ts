@@ -5,16 +5,16 @@ import { css, html, WidgetTemplate } from 'nexwidget';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'external-link-widget': ExternalLinkWidget;
+    'external-link-component': ExternalLinkComponent;
   }
 }
 
-export interface ExternalLinkWidget {
+export interface ExternalLinkComponent {
   get link(): string;
   set link(v: string);
 }
 
-export class ExternalLinkWidget extends Nexinterface {
+export class ExternalLinkComponent extends Nexinterface {
   static get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -33,7 +33,7 @@ export class ExternalLinkWidget extends Nexinterface {
       () =>
         addDialog({
           headline: 'لینک زیر باز شود؟',
-          body: html`<typography-widget variant="text">${this.link}</typography-widget>`,
+          body: html`<typography-widget dir="auto" variant="text">${this.link}</typography-widget>`,
           button: {
             text: 'باز کن',
             action: () => open(this.link, '_blank'),
@@ -47,5 +47,5 @@ export class ExternalLinkWidget extends Nexinterface {
   }
 }
 
-ExternalLinkWidget.createAttributes([['link', String]]);
-ExternalLinkWidget.register('external-link-widget');
+ExternalLinkComponent.createAttributes([['link', String]]);
+ExternalLinkComponent.register('external-link-component');
