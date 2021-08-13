@@ -1,4 +1,5 @@
-import { css, html, Nexwidget, WidgetTemplate } from 'nexwidget';
+import { Nexinterface } from 'nexinterface/dist/base/base.js';
+import { css, html, WidgetTemplate } from 'nexwidget';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -6,7 +7,7 @@ declare global {
   }
 }
 
-export class ChipsContainerWidget extends Nexwidget {
+export class ChipsContainerWidget extends Nexinterface {
   static get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -15,7 +16,6 @@ export class ChipsContainerWidget extends Nexwidget {
           display: flex;
           width: 100%;
           flex-direction: row;
-          box-sizing: border-box;
           flex-wrap: wrap;
           gap: 8px;
           padding: 8px;

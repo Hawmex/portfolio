@@ -4,15 +4,6 @@ body {
   margin: 0px;
 }
 
-*,
-*::before,
-*::after {
-  user-select: none;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-}
-
 noscript {
   display: flex;
   align-items: center;

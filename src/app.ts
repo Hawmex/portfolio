@@ -1,6 +1,7 @@
 import { AppScaffold } from 'nexinterface/dist/app-scaffold/app-scaffold.js';
 import 'nexinterface/dist/button/button.js';
 import 'nexinterface/dist/dialog/dialog.js';
+import 'nexinterface/dist/drawer/drawer.js';
 import 'nexinterface/dist/section/section.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
@@ -118,7 +119,7 @@ export class AppWidget extends AppScaffold {
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">زبان‌ها</typography-widget>
-          <chips-container-widget dir="auto">
+          <chips-container-widget>
             <chip-widget>JavaScript (ESNext)</chip-widget>
             <chip-widget>TypeScript</chip-widget>
             <chip-widget>HTML</chip-widget>
@@ -128,7 +129,7 @@ export class AppWidget extends AppScaffold {
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">مهارت‌ها</typography-widget>
-          <chips-container-widget dir="auto">
+          <chips-container-widget>
             <chip-widget>Front-End</chip-widget>
             <chip-widget>Back-End</chip-widget>
             <chip-widget>ExpressJS</chip-widget>
@@ -161,6 +162,7 @@ export class AppWidget extends AppScaffold {
             <chip-widget>Nexstate</chip-widget>
           </chips-container-widget>
           <carousel-widget
+            style="direction: rtl;"
             .imageSrcs=${[
               '/assets/health-team-app-home.png',
               '/assets/health-team-app-shop.png',
@@ -172,7 +174,7 @@ export class AppWidget extends AppScaffold {
             ><button-widget
               style="margin: 0px 8px"
               variant="text"
-              text="اپلیکیشن وب نوتر"
+              text="اپلیکیشن وب Noter"
               icon="open_in_new"
             ></button-widget>
           </external-link-widget>
@@ -185,6 +187,7 @@ export class AppWidget extends AppScaffold {
             <chip-widget>Firebase Firestore</chip-widget>
           </chips-container-widget>
           <carousel-widget
+            style="direction: rtl;"
             .imageSrcs=${[
               '/assets/noter-app-auth.png',
               '/assets/noter-app-home.png',

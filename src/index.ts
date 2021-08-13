@@ -1,4 +1,5 @@
-import { html, Nexwidget, WidgetTemplate } from 'nexwidget';
+import { Nexinterface } from 'nexinterface/dist/base/base.js';
+import { html, WidgetTemplate } from 'nexwidget';
 
 import './app.js';
 
@@ -8,9 +9,9 @@ declare global {
   }
 }
 
-export class AppProvider extends Nexwidget {
+export class AppProvider extends Nexinterface {
   get template(): WidgetTemplate {
-    return html`<app-widget dir="rtl"></app-widget>`;
+    return html`<app-widget></app-widget>`;
   }
 }
 

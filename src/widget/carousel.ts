@@ -1,5 +1,6 @@
 import { repeat } from 'lit-html/directives/repeat.js';
-import { css, html, Nexwidget, WidgetTemplate } from 'nexwidget';
+import { Nexinterface } from 'nexinterface/dist/base/base.js';
+import { css, html, WidgetTemplate } from 'nexwidget';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -12,7 +13,7 @@ export interface CarouselWidget {
   set imageSrcs(v: string[] | undefined);
 }
 
-export class CarouselWidget extends Nexwidget {
+export class CarouselWidget extends Nexinterface {
   static get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -29,7 +30,6 @@ export class CarouselWidget extends Nexwidget {
 
         :host .images-container {
           display: grid;
-          box-sizing: border-box;
           gap: 16px;
           padding: 16px;
           width: max-content;

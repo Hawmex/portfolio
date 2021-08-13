@@ -1,4 +1,4 @@
-import { Interactive } from 'nexinterface/dist/interactive/interactive';
+import { Interactive } from 'nexinterface/dist/interactive/interactive.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
 
