@@ -1,5 +1,6 @@
+import { Interactive } from 'nexinterface/dist/interactive/interactive';
 import 'nexinterface/dist/typography/typography.js';
-import { css, html, Nexwidget, WidgetTemplate } from 'nexwidget';
+import { css, html, WidgetTemplate } from 'nexwidget';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -7,7 +8,7 @@ declare global {
   }
 }
 
-export class ChipWidget extends Nexwidget {
+export class ChipWidget extends Interactive {
   static get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -19,6 +20,10 @@ export class ChipWidget extends Nexwidget {
           min-height: 32px;
           align-items: center;
           border-radius: 10000px;
+        }
+
+        :host typography-widget {
+          padding: 0px 12px;
         }
       `,
     ];

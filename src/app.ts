@@ -1,11 +1,13 @@
 import { AppScaffold } from 'nexinterface/dist/app-scaffold/app-scaffold.js';
 import 'nexinterface/dist/button/button.js';
+import 'nexinterface/dist/dialog/dialog.js';
 import 'nexinterface/dist/section/section.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
 import './widget/carousel.js';
 import './widget/chip.js';
 import './widget/chips-container.js';
+import './widget/external-link.js';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -20,7 +22,6 @@ export class AppWidget extends AppScaffold {
       css`
         :host {
           display: flex;
-          overflow: hidden auto;
           box-sizing: border-box;
           align-items: center;
           justify-content: center;
@@ -32,6 +33,8 @@ export class AppWidget extends AppScaffold {
         :host .wrapper {
           width: max-content;
           max-width: 100%;
+          height: 100vh;
+          overflow-y: auto;
           display: block;
           margin: auto;
         }
@@ -81,18 +84,19 @@ export class AppWidget extends AppScaffold {
 
   get template(): WidgetTemplate {
     return html`
+      <dialog-widget></dialog-widget>
       <div class="wrapper">
         <section-widget variant="buttons">
-          <a slot="icons" href="mailto:itshawmex@gmail.com" target="_blank">
+          <external-link-widget slot="icons" link="mailto:itshawmex@gmail.com">
             <button-widget class="email-button" variant="text" icon="mail"></button-widget>
-          </a>
-          <a slot="icons" href="https://t.me/hawmex" target="_blank">
-            <button-widget slot="icons" variant="text" icon="telegram"></button-widget>
-          </a>
-          <a slot="buttons" href="https://github.com/Hawmex" target="_blank">
+          </external-link-widget>
+          <external-link-widget slot="icons" link="https://t.me/hawmex">
+            <button-widget variant="text" icon="telegram"></button-widget>
+          </external-link-widget>
+          <external-link-widget slot="buttons" link="https://github.com/Hawmex">
             <button-widget class="github-button" variant="text" text="گیتهاب من" icon="open_in_new">
             </button-widget>
-          </a>
+          </external-link-widget>
         </section-widget>
         <div class="profile">
           <img src="/assets/profile.jpg" />
@@ -103,6 +107,13 @@ export class AppWidget extends AppScaffold {
             سلام. من حامد اعراب، دانشجوی کارشناسی مهندسی صنایع در دانشگاه صنعتی امیرکبیر هستم. سه
             سال هست که توسعه‌دهندگی وب در بخش‌های فرانت‌اند و بک‌اند رو شروع کردم و یک ساله که به
             صورت جدی اون رو دنبال می‌کنم.
+          </typography-widget>
+          <typography-widget style="text-align: justify" variant="text">
+            به تازگی پکیج‌های nexbounce, nexstate, nexwidget, & nexinterface رو در npm منتشر کردم و
+            نگهداری می‌کنم. nexbounce برای debounce کردن task های سنگین استفاده میشه. nexstate هم یک
+            state manager غیرمتمرکز هست. nexwidget هم برای توسعه کامپوننت‌های وب نوشته شده. و در
+            نهایت nexinterface هم مجموعه‌ای از ویجت‌های طراحی material هست که با استفاده از
+            nexwidget توسعه داده شده.
           </typography-widget>
         </section-widget>
         <section-widget variant="paragraphs">
@@ -123,25 +134,31 @@ export class AppWidget extends AppScaffold {
             <chip-widget>ExpressJS</chip-widget>
             <chip-widget>MongoDB</chip-widget>
             <chip-widget>Web Components</chip-widget>
+            <chip-widget>React</chip-widget>
+            <chip-widget>Redux</chip-widget>
           </chips-container-widget>
         </section-widget>
         <section-widget variant="paragraphs">
           <typography-widget variant="headline">نمونه‌کارها</typography-widget>
-          <a href="https://healthteam.herokuapp.com" target="_blank"
+          <external-link-widget link="https://healthteam.herokuapp.com"
             ><button-widget
               style="margin: 0px 8px"
               variant="text"
               text="اپلیکیشن وب تیم سلامتی"
               icon="open_in_new"
             ></button-widget>
-          </a>
+          </external-link-widget>
           <chips-container-widget>
             <chip-widget>توسعه Full-Stack</chip-widget>
             <chip-widget>نمره کامل PWA</chip-widget>
             <chip-widget>رابط کاربری Material</chip-widget>
             <chip-widget>Dark Mode خودکار و هماهنگ با دستگاه</chip-widget>
             <chip-widget>تجربه‌ی کاربری نزدیک به Native</chip-widget>
-            <chip-widget>متصل به درگاه پرداخت</chip-widget>
+            <chip-widget>متصل به درگاه پرداخت IDPay</chip-widget>
+            <chip-widget>ExpressJS</chip-widget>
+            <chip-widget>MongoDB</chip-widget>
+            <chip-widget>Nexwidget</chip-widget>
+            <chip-widget>Nexstate</chip-widget>
           </chips-container-widget>
           <carousel-widget
             .imageSrcs=${[
@@ -151,18 +168,19 @@ export class AppWidget extends AppScaffold {
               '/assets/health-team-app-shop-dark.png',
             ]}
           ></carousel-widget>
-          <a href="https://noter-279d9.web.app" target="_blank"
+          <external-link-widget link="https://noter-279d9.web.app"
             ><button-widget
               style="margin: 0px 8px"
               variant="text"
               text="اپلیکیشن وب نوتر"
               icon="open_in_new"
             ></button-widget>
-          </a>
+          </external-link-widget>
           <chips-container-widget>
             <chip-widget>توسعه Front-End</chip-widget>
             <chip-widget>رابط کاربری Material</chip-widget>
             <chip-widget>React</chip-widget>
+            <chip-widget>Redux</chip-widget>
             <chip-widget>Firebase Auth</chip-widget>
             <chip-widget>Firebase Firestore</chip-widget>
           </chips-container-widget>
