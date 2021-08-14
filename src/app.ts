@@ -23,7 +23,6 @@ export class AppWidget extends AppScaffold {
       css`
         :host {
           display: flex;
-          box-sizing: border-box;
           align-items: center;
           justify-content: center;
           background-color: var(--surfaceColor);
@@ -40,11 +39,6 @@ export class AppWidget extends AppScaffold {
           margin: auto;
         }
 
-        :host a {
-          color: var(--primaryColor);
-          text-decoration: none;
-        }
-
         :host .email-button {
           --primaryColor: #ef5350;
         }
@@ -57,7 +51,6 @@ export class AppWidget extends AppScaffold {
           width: 100%;
           display: flex;
           justify-content: center;
-          box-sizing: border-box;
           padding: 8px 16px;
         }
 
