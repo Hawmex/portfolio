@@ -8,7 +8,10 @@
     <link rel="icon" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/favicon.png" />
     <link rel="stylesheet" href="/index.css" media="all" />
-    <script type="module" src="/build/index.js" defer="defer"></script>
+    <link rel="preload" href="/index.css" as="style" />
+    <link rel="preload" href="/build/index.js" as="script" />
+    <link rel="preload" href="/assets/profile.jpg" as="image" />
+    <script type="module" src="/build/index.js"></script>
   </head>
   <body>
     <noscript>Please enable JavaScript.</noscript>

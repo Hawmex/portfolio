@@ -115,7 +115,7 @@ export class AppWidget extends AppScaffold {
           </external-link-component>
         </section-widget>
         <div class="profile">
-          <img loading="eager" src="/assets/profile.jpg" alt="profile photo" />
+          <img src="/assets/profile.jpg" alt="profile photo" />
         </div>
         <section-widget variant="paragraphs">
           <typography-widget variant="top-bar">حامد اعراب</typography-widget>
