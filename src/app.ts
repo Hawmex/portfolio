@@ -1,7 +1,7 @@
 import { AppScaffold } from 'nexinterface/dist/app-scaffold/app-scaffold.js';
 import 'nexinterface/dist/button/button.js';
 import 'nexinterface/dist/dialog/dialog.js';
-import 'nexinterface/dist/drawer/drawer.js';
+import 'nexinterface/dist/icon/icon.js';
 import 'nexinterface/dist/section/section.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
@@ -27,7 +27,11 @@ export class AppWidget extends AppScaffold {
           justify-content: center;
           background-color: var(--surfaceColor);
 
-          --primaryColor: #42a5f5;
+          --primaryColor: #26a69a;
+        }
+
+        :host .github-button {
+          --primaryColor: #263238;
         }
 
         :host .wrapper {
@@ -37,14 +41,6 @@ export class AppWidget extends AppScaffold {
           overflow-y: auto;
           display: block;
           margin: auto;
-        }
-
-        :host .email-button {
-          --primaryColor: #ef5350;
-        }
-
-        :host .github-button {
-          --primaryColor: #24292f;
         }
 
         :host .profile {
@@ -76,7 +72,7 @@ export class AppWidget extends AppScaffold {
         @media (prefers-color-scheme: dark) {
           :host .github-button {
             --primaryColor: #ffffff;
-            --onPrimaryColor: #24292f;
+            --onPrimaryColor: #263238;
           }
         }
 
@@ -95,18 +91,31 @@ export class AppWidget extends AppScaffold {
       <div class="wrapper">
         <section-widget variant="buttons">
           <external-link-component slot="icons" link="mailto:itshawmex@gmail.com">
-            <button-widget class="email-button" variant="text" icon="mail"></button-widget>
+            <button-widget
+              style="--primaryColor: #ff1744"
+              variant="text"
+              icon="mail"
+            ></button-widget>
           </external-link-component>
           <external-link-component slot="icons" link="https://t.me/hawmex">
-            <button-widget variant="text" icon="telegram"></button-widget>
+            <button-widget
+              style="--primaryColor: #42a5f5"
+              variant="text"
+              icon="telegram"
+            ></button-widget>
           </external-link-component>
           <external-link-component slot="buttons" link="https://github.com/Hawmex">
-            <button-widget class="github-button" variant="text" text="گیتهاب من" icon="open_in_new">
+            <button-widget
+              class="github-button"
+              variant="solid"
+              text="گیتهاب من"
+              icon="open_in_new"
+            >
             </button-widget>
           </external-link-component>
         </section-widget>
         <div class="profile">
-          <img loading="lazy" src="/assets/profile.jpg" alt="profile photo" />
+          <img loading="eager" src="/assets/profile.jpg" alt="profile photo" />
         </div>
         <section-widget variant="paragraphs">
           <typography-widget variant="top-bar">حامد اعراب</typography-widget>
@@ -202,6 +211,12 @@ export class AppWidget extends AppScaffold {
               '/assets/noter-app-home-mobile.png',
             ]}
           ></carousel-widget>
+        </section-widget>
+        <section-widget
+          style="align-items: center; background: var(--backgroundColor); box-shadow: var(--shadowLvl3);"
+          variant="paragraphs"
+        >
+          <icon-widget value="code"></icon-widget>
         </section-widget>
       </div>
     `;

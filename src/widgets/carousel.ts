@@ -59,8 +59,7 @@ export class CarouselWidget extends Nexinterface {
         ${repeat(
           this.imageSrcs!,
           (src) => src,
-          (src) =>
-            html`<div class="image"><img loading="lazy" alt="carousel image" src=${src} /></div>`,
+          (src) => html`<div class="image"><img alt="carousel image" src=${src} /></div>`,
         )}
       </div>
     `;
