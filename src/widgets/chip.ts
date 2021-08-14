@@ -20,6 +20,7 @@ export class ChipWidget extends Interactive {
           min-height: 32px;
           align-items: center;
           border-radius: 10000px;
+          box-shadow: var(--shadowLvl1);
         }
 
         :host typography-widget {
