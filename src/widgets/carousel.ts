@@ -1,6 +1,10 @@
 import { repeat } from 'lit-html/directives/repeat.js';
 import { Nexinterface } from 'nexinterface/dist/base/base.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
+import './openable-image.js';
+import { OpenableImageWidget } from './openable-image.js';
+
+export type CarouselImage = [src: string, alt: string];
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -9,8 +13,8 @@ declare global {
 }
 
 export interface CarouselWidget {
-  get imageSrcs(): string[] | undefined;
-  set imageSrcs(v: string[] | undefined);
+  get images(): CarouselImage[] | undefined;
+  set images(v: CarouselImage[] | undefined);
 }
 
 export class CarouselWidget extends Nexinterface {
@@ -25,6 +29,7 @@ export class CarouselWidget extends Nexinterface {
           scroll-padding: 32px;
           overflow: auto hidden;
           width: max-content;
+          scroll-behavior: smooth;
           max-width: 100%;
         }
 
@@ -36,7 +41,7 @@ export class CarouselWidget extends Nexinterface {
           grid-auto-flow: column;
         }
 
-        :host .image {
+        :host openable-image-widget {
           display: flex;
           overflow: hidden;
           scroll-snap-align: center;
@@ -45,7 +50,7 @@ export class CarouselWidget extends Nexinterface {
           background-color: black;
         }
 
-        :host img {
+        :host openable-image-widget::part(img) {
           margin: auto;
           width: 100%;
         }
@@ -57,14 +62,25 @@ export class CarouselWidget extends Nexinterface {
     return html`
       <div class="images-container">
         ${repeat(
-          this.imageSrcs!,
-          (src) => src,
-          (src) => html`<div class="image"><img alt="carousel image" src=${src} /></div>`,
+          this.images!,
+          ([src]) => src,
+          ([src, alt]) =>
+            html`
+              <openable-image-widget
+                @click=${(event: MouseEvent) =>
+                  (<OpenableImageWidget>event.target).scrollIntoView({
+                    inline: 'center',
+                    block: 'nearest',
+                  })}
+                alt=${alt}
+                src=${src}
+              ></openable-image-widget>
+            `,
         )}
       </div>
     `;
   }
 }
 
-CarouselWidget.createReactives(['imageSrcs']);
+CarouselWidget.createReactives(['images']);
 CarouselWidget.register('carousel-widget');

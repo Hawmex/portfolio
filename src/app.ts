@@ -7,8 +7,10 @@ import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
 import './components/external-link.js';
 import './widgets/carousel.js';
+import { CarouselImage } from './widgets/carousel.js';
 import './widgets/chip.js';
 import './widgets/chips-container.js';
+import './widgets/openable-image.js';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -37,6 +39,7 @@ export class AppWidget extends AppScaffold {
         :host .wrapper {
           width: max-content;
           max-width: 100%;
+          scroll-behavior: smooth;
           height: 100vh;
           overflow-y: auto;
           display: block;
@@ -47,7 +50,7 @@ export class AppWidget extends AppScaffold {
           width: 100%;
           display: flex;
           justify-content: center;
-          padding: 8px 16px;
+          padding: 16px 16px 8px 16px;
         }
 
         @keyframes pop {
@@ -62,8 +65,7 @@ export class AppWidget extends AppScaffold {
           }
         }
 
-        :host .profile img {
-          border-radius: 8px;
+        :host .profile openable-image-widget::part(img) {
           width: 256px;
           max-width: 100%;
           animation: pop var(--durationLvl2) var(--deceleratedEase);
@@ -77,7 +79,7 @@ export class AppWidget extends AppScaffold {
         }
 
         @media (max-width: 640px) {
-          :host .profile img {
+          :host .profile openable-image-widget::part(img) {
             width: 100%;
           }
         }
@@ -115,7 +117,10 @@ export class AppWidget extends AppScaffold {
           </external-link-component>
         </section-widget>
         <div class="profile">
-          <img src="/assets/profile.jpg" alt="profile photo" />
+          <openable-image-widget
+            src="/assets/profile.jpg"
+            alt="عکس پروفایل"
+          ></openable-image-widget>
         </div>
         <section-widget variant="paragraphs">
           <typography-widget variant="top-bar">حامد اعراب</typography-widget>
@@ -180,11 +185,14 @@ export class AppWidget extends AppScaffold {
             <chip-widget>Nexstate</chip-widget>
           </chips-container-widget>
           <carousel-widget
-            .imageSrcs=${[
-              '/assets/health-team-app-home.png',
-              '/assets/health-team-app-shop.png',
-              '/assets/health-team-app-home-dark.png',
-              '/assets/health-team-app-shop-dark.png',
+            .images=${<CarouselImage[]>[
+              ['/assets/health-team-app-home.png', 'صفحه اصلی اپلیکیشن تیم سلامتی در دسکتاپ'],
+              ['/assets/health-team-app-shop.png', 'صفحه فروشگاه اپلیکیشن تیم سلامتی در دسکتاپ'],
+              ['/assets/health-team-app-home-dark.png', 'صفحه اصلی اپلیکیشن تیم سلامتی در موبایل'],
+              [
+                '/assets/health-team-app-shop-dark.png',
+                'صفحه فروشگاه اپلیکیشن تیم سلامتی در موبایل',
+              ],
             ]}
           ></carousel-widget>
           <external-link-component link="https://noter-279d9.web.app"
@@ -204,11 +212,11 @@ export class AppWidget extends AppScaffold {
             <chip-widget>Firebase Firestore</chip-widget>
           </chips-container-widget>
           <carousel-widget
-            .imageSrcs=${[
-              '/assets/noter-app-auth.png',
-              '/assets/noter-app-home.png',
-              '/assets/noter-app-auth-mobile.png',
-              '/assets/noter-app-home-mobile.png',
+            .images=${<CarouselImage[]>[
+              ['/assets/noter-app-auth.png', 'صفحه ورود اپلیکیشن Noter در دسکتاپ'],
+              ['/assets/noter-app-home.png', 'صفحه اصلی اپلیکیشن Noter در دسکتاپ'],
+              ['/assets/noter-app-auth-mobile.png', 'صفحه ورود اپلیکیشن Noter در موبایل'],
+              ['/assets/noter-app-home-mobile.png', 'صفحه اصلی اپلیکیشن Noter در موبایل'],
             ]}
           ></carousel-widget>
         </section-widget>
