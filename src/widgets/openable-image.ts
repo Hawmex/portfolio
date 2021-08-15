@@ -30,6 +30,10 @@ export class OpenableImageWidget extends Nexinterface {
           overflow: hidden;
         }
 
+        :host .primary {
+          cursor: pointer;
+        }
+
         :host .secondary {
           border-radius: 8px;
           box-shadow: var(--shadowLvl4);
