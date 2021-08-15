@@ -26,6 +26,7 @@ export class ExternalLinkComponent extends Nexinterface {
       `,
     ];
   }
+
   addedCallback() {
     super.addedCallback();
     this.addEventListener(
@@ -42,6 +43,7 @@ export class ExternalLinkComponent extends Nexinterface {
       { signal: this.removedSignal },
     );
   }
+
   get template(): WidgetTemplate {
     return html`<slot></slot>`;
   }

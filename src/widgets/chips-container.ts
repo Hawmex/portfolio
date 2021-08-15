@@ -23,6 +23,7 @@ export class ChipsContainerWidget extends Nexinterface {
       `,
     ];
   }
+
   get template(): WidgetTemplate {
     return html`<slot></slot>`;
   }
