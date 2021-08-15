@@ -10,8 +10,8 @@ declare global {
 }
 
 export interface ExternalLinkComponent {
-  get link(): string;
-  set link(v: string);
+  get link(): string | null;
+  set link(v: string | null);
 }
 
 export class ExternalLinkComponent extends Nexinterface {
@@ -36,7 +36,7 @@ export class ExternalLinkComponent extends Nexinterface {
           body: html`<typography-widget dir="auto" variant="text">${this.link}</typography-widget>`,
           button: {
             text: 'باز کن',
-            action: () => open(this.link, '_blank'),
+            action: () => open(this.link!, '_blank'),
           },
         }),
       { signal: this.removedSignal },
