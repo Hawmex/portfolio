@@ -66,6 +66,7 @@ export class AppWidget extends AppScaffold {
         }
 
         :host .profile openable-image-widget::part(img) {
+          border-radius: 50%;
           width: 256px;
           max-width: 100%;
           animation: pop var(--durationLvl2) var(--deceleratedEase);
