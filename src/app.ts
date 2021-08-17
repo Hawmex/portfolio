@@ -172,7 +172,7 @@ export class AppWidget extends AppScaffold {
               icon="open_in_new"
             ></button-widget>
           </external-link-component>
-          <chips-container-widget dir="auto">
+          <chips-container-widget>
             <chip-widget>توسعه Full-Stack</chip-widget>
             <chip-widget>نمره کامل PWA</chip-widget>
             <chip-widget>رابط کاربری Material</chip-widget>
@@ -203,7 +203,7 @@ export class AppWidget extends AppScaffold {
               icon="open_in_new"
             ></button-widget>
           </external-link-component>
-          <chips-container-widget dir="auto">
+          <chips-container-widget>
             <chip-widget>توسعه Front-End</chip-widget>
             <chip-widget>رابط کاربری Material</chip-widget>
             <chip-widget>React</chip-widget>

@@ -1,5 +1,7 @@
 import { Nexinterface } from 'nexinterface/dist/base/base.js';
 import 'nexinterface/dist/scrim/scrim.js';
+import 'nexinterface/dist/typography/typography.js';
+import 'nexinterface/dist/button/button.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
 
 declare global {
@@ -74,12 +76,13 @@ export class OpenableImageWidget extends Nexinterface {
           position: absolute;
           top: 0px;
           right: 0px;
-          height: 56px;
+          padding: 8px;
           width: 100%;
           z-index: 2;
           box-shadow: var(--shadowLvl2);
           align-items: center;
           display: flex;
+          gap: 16px;
           background-color: var(--onSurfaceColor);
           color: var(--surfaceColor);
           visibility: hidden;
@@ -95,6 +98,7 @@ export class OpenableImageWidget extends Nexinterface {
         }
 
         :host typography-widget {
+          padding: 0px 8px;
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -117,6 +121,11 @@ export class OpenableImageWidget extends Nexinterface {
         alt=${this.alt!}
       />
       <div class="header">
+        <button-widget
+          @click=${() => (this.active = false)}
+          variant="text"
+          icon="close"
+        ></button-widget>
         <typography-widget variant="text">${this.alt}</typography-widget>
       </div>
       <img class="secondary" src=${this.src!} alt=${this.alt!} />
