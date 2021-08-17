@@ -50,6 +50,7 @@ export class OpenableImageWidget extends Nexinterface {
           opacity: 0;
           visibility: hidden;
           transform: translate(50%, -50%) scale(0.9);
+          will-change: opacity, transform;
           transition: opacity calc(var(--durationLvl2) - 50ms) var(--deceleratedEase),
             transform 0ms var(--deceleratedEase) calc(var(--durationLvl2) - 50ms),
             visibility calc(var(--durationLvl2) - 50ms) var(--deceleratedEase);
@@ -62,14 +63,6 @@ export class OpenableImageWidget extends Nexinterface {
           transition: opacity var(--durationLvl2) var(--deceleratedEase),
             transform var(--durationLvl2) var(--deceleratedEase),
             visibility var(--durationLvl2) var(--deceleratedEase);
-        }
-
-        :host scrim-widget {
-          transition-duration: calc(var(--durationLvl2) - 50ms);
-        }
-
-        :host([active]) scrim-widget {
-          transition-duration: var(--durationLvl2);
         }
 
         :host .header {
@@ -87,6 +80,7 @@ export class OpenableImageWidget extends Nexinterface {
           color: var(--surfaceColor);
           visibility: hidden;
           transform: translateY(-100%);
+          will-change: transform;
           transition: transform calc(var(--durationLvl2) - 50ms) var(--deceleratedEase),
             visibility calc(var(--durationLvl2) - 50ms) var(--deceleratedEase);
         }
