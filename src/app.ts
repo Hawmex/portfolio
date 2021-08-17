@@ -93,21 +93,21 @@ export class AppWidget extends AppScaffold {
       <dialog-widget></dialog-widget>
       <div class="wrapper">
         <section-widget variant="buttons">
-          <external-link-component slot="icons" link="mailto:itshawmex@gmail.com">
+          <external-link-component slot="leading" link="mailto:itshawmex@gmail.com">
             <button-widget
               style="--primaryColor: #ff1744"
               variant="text"
               icon="mail"
             ></button-widget>
           </external-link-component>
-          <external-link-component slot="icons" link="https://t.me/hawmex">
+          <external-link-component slot="leading" link="https://t.me/hawmex">
             <button-widget
               style="--primaryColor: #42a5f5"
               variant="text"
               icon="telegram"
             ></button-widget>
           </external-link-component>
-          <external-link-component slot="buttons" link="https://github.com/Hawmex">
+          <external-link-component slot="trailing" link="https://github.com/Hawmex">
             <button-widget
               class="github-button"
               variant="solid"
