@@ -123,7 +123,7 @@ export class OpenableImageWidget extends Nexinterface {
       <div class="header">
         <button-widget
           @click=${() => (this.active = false)}
-          variant="text"
+          variant="menu"
           icon="close"
         ></button-widget>
         <typography-widget variant="text">${this.alt}</typography-widget>
