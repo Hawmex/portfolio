@@ -49,5 +49,5 @@ export class ExternalLinkComponent extends Nexinterface {
   }
 }
 
-ExternalLinkComponent.createAttributes([['link', String]]);
+ExternalLinkComponent.createAttributes([{ key: 'link', type: 'string' }]);
 ExternalLinkComponent.register('external-link-component');

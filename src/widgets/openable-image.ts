@@ -128,9 +128,9 @@ export class OpenableImageWidget extends Nexinterface {
 }
 
 OpenableImageWidget.createAttributes([
-  ['active', Boolean],
-  ['src', String],
-  ['alt', String],
+  { key: 'active', type: 'boolean' },
+  { key: 'src', type: 'string' },
+  { key: 'alt', type: 'string' },
 ]);
 
 OpenableImageWidget.createReactives(['active', 'src', 'alt']);
