@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Hawmex/portfolio#readme",
   "dependencies": {
     "lit-html": "^1.4.1",
-    "nexinterface": "^2.0.12",
+    "nexinterface": "^2.0.13",
     "nexwidget": "^5.0.1"
   },
   "devDependencies": {
