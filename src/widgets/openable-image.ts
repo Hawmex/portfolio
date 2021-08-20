@@ -134,4 +134,4 @@ OpenableImageWidget.createAttributes([
 ]);
 
 OpenableImageWidget.createReactives(['active', 'src', 'alt']);
-OpenableImageWidget.register('openable-image-widget');
+OpenableImageWidget.registerAs('openable-image-widget');

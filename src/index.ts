@@ -15,4 +15,4 @@ export class AppProvider extends Nexinterface {
   }
 }
 
-AppProvider.register('app-provider');
+AppProvider.registerAs('app-provider');

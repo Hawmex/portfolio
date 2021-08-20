@@ -235,4 +235,4 @@ export class AppWidget extends AppScaffold {
   }
 }
 
-AppWidget.register('app-widget');
+AppWidget.registerAs('app-widget');

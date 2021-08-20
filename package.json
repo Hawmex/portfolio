@@ -22,8 +22,8 @@
   "homepage": "https://github.com/Hawmex/portfolio#readme",
   "dependencies": {
     "lit-html": "^1.4.1",
-    "nexinterface": "^3.0.1",
-    "nexwidget": "^5.0.4"
+    "nexinterface": "^3.0.2",
+    "nexwidget": "^5.0.5"
   },
   "devDependencies": {
     "esbuild": "^0.12.21",

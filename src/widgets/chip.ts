@@ -35,4 +35,4 @@ export class ChipWidget extends Interactive {
   }
 }
 
-ChipWidget.register('chip-widget');
+ChipWidget.registerAs('chip-widget');

@@ -83,4 +83,4 @@ export class CarouselWidget extends Nexinterface {
 }
 
 CarouselWidget.createReactives(['images']);
-CarouselWidget.register('carousel-widget');
+CarouselWidget.registerAs('carousel-widget');

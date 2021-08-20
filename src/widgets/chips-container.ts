@@ -29,4 +29,4 @@ export class ChipsContainerWidget extends Nexinterface {
   }
 }
 
-ChipsContainerWidget.register('chips-container-widget');
+ChipsContainerWidget.registerAs('chips-container-widget');
