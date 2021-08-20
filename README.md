@@ -1,8 +1,6 @@
 # Hamed Aarab Portfolio
 
-## Getting Started
-
-### Installation
+## Installation
 
 ```
 npm i -g live-server
@@ -12,7 +10,7 @@ npm i -g live-server
 npm install
 ```
 
-### Developement
+## Developement
 
 ```
 npm run dev:server
@@ -26,7 +24,7 @@ npm run dev:tsc
 npm run dev:esbuild
 ```
 
-### Production
+## Production
 
 ```
 npm run prod
