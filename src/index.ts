@@ -1,6 +1,5 @@
 import { Nexinterface } from 'nexinterface/dist/base/base.js';
 import { html, WidgetTemplate } from 'nexwidget';
-
 import './app.js';
 
 declare global {
