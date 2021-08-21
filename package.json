@@ -22,7 +22,7 @@
   "dependencies": {
     "lit-html": "^1.4.1",
     "nexinterface": "^3.0.2",
-    "nexwidget": "^5.0.5"
+    "nexwidget": "^5.0.6"
   },
   "devDependencies": {
     "esbuild": "^0.12.21",
