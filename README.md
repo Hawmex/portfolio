@@ -1,6 +1,6 @@
 # Hamed Aarab Portfolio
 
-My portfolio website repository.
+My portfolio website.
 
 ## Installation
 

@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My portfolio website.",
+  "private": true,
   "scripts": {
     "prod": "npx tsc && npx esbuild dist/index.js --splitting --bundle --target=es2020 --outdir=public/build --format=esm --external:*.woff2 --minify",
     "dev:server": "cd public && npx live-server",
@@ -15,7 +15,6 @@
   },
   "keywords": [],
   "author": "Hamed Aarab",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Hawmex/portfolio/issues"
   },
