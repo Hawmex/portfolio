@@ -1,5 +1,6 @@
 import { Nexinterface } from 'nexinterface/dist/base/base.js';
 import { addDialog } from 'nexinterface/dist/dialog/dialog.js';
+import 'nexinterface/dist/section/section.js';
 import 'nexinterface/dist/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget';
 
@@ -34,7 +35,11 @@ export class ExternalLinkComponent extends Nexinterface {
       () =>
         addDialog({
           headline: 'لینک زیر باز شود؟',
-          body: html`<typography-widget dir="auto" variant="text">${this.link}</typography-widget>`,
+          body: html`
+            <section-widget variant="paragraphs">
+              <typography-widget dir="auto" variant="text">${this.link}</typography-widget>
+            </section-widget>
+          `,
           button: {
             text: 'باز کن',
             action: () => open(this.link!, '_blank'),
