@@ -16,7 +16,7 @@ export interface ExternalLinkComponent {
 }
 
 export class ExternalLinkComponent extends Nexinterface {
-  static get styles(): CSSStyleSheet[] {
+  static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
       css`
@@ -28,7 +28,7 @@ export class ExternalLinkComponent extends Nexinterface {
     ];
   }
 
-  addedCallback() {
+  override addedCallback() {
     super.addedCallback();
     this.addEventListener(
       'click',
@@ -49,7 +49,7 @@ export class ExternalLinkComponent extends Nexinterface {
     );
   }
 
-  get template(): WidgetTemplate {
+  override get template(): WidgetTemplate {
     return html`<slot></slot>`;
   }
 }

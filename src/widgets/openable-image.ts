@@ -22,7 +22,7 @@ export interface OpenableImageWidget {
 }
 
 export class OpenableImageWidget extends Nexinterface {
-  static get styles(): CSSStyleSheet[] {
+  static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
       css`
@@ -101,7 +101,7 @@ export class OpenableImageWidget extends Nexinterface {
     ];
   }
 
-  get template(): WidgetTemplate {
+  override get template(): WidgetTemplate {
     return html`
       <scrim-widget
         ?active=${this.active}

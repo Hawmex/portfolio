@@ -19,7 +19,7 @@ declare global {
 }
 
 export class AppWidget extends AppScaffold {
-  static get styles(): CSSStyleSheet[] {
+  static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
       css`
@@ -97,7 +97,7 @@ export class AppWidget extends AppScaffold {
     ];
   }
 
-  get template(): WidgetTemplate {
+  override get template(): WidgetTemplate {
     return html`
       <dialog-widget></dialog-widget>
       <div class="wrapper">
