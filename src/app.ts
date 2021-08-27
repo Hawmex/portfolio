@@ -196,13 +196,22 @@ export class AppWidget extends AppScaffold {
           </chips-container-widget>
           <carousel-widget
             .images=${<CarouselImage[]>[
-              ['/assets/health-team-app-home.png', 'صفحه اصلی اپلیکیشن تیم سلامتی در دسکتاپ'],
-              ['/assets/health-team-app-shop.png', 'صفحه فروشگاه اپلیکیشن تیم سلامتی در دسکتاپ'],
-              ['/assets/health-team-app-home-dark.png', 'صفحه اصلی اپلیکیشن تیم سلامتی در موبایل'],
-              [
-                '/assets/health-team-app-shop-dark.png',
-                'صفحه فروشگاه اپلیکیشن تیم سلامتی در موبایل',
-              ],
+              {
+                src: '/assets/health-team-app-home.png',
+                alt: 'صفحه اصلی اپلیکیشن تیم سلامتی در دسکتاپ',
+              },
+              {
+                src: '/assets/health-team-app-shop.png',
+                alt: 'صفحه فروشگاه اپلیکیشن تیم سلامتی در دسکتاپ',
+              },
+              {
+                src: '/assets/health-team-app-home-dark.png',
+                alt: 'صفحه اصلی اپلیکیشن تیم سلامتی در موبایل',
+              },
+              {
+                src: '/assets/health-team-app-shop-dark.png',
+                alt: 'صفحه فروشگاه اپلیکیشن تیم سلامتی در موبایل',
+              },
             ]}
           ></carousel-widget>
           <external-link-component link="https://noter-279d9.web.app"
@@ -223,10 +232,22 @@ export class AppWidget extends AppScaffold {
           </chips-container-widget>
           <carousel-widget
             .images=${<CarouselImage[]>[
-              ['/assets/noter-app-auth.png', 'صفحه ورود اپلیکیشن Noter در دسکتاپ'],
-              ['/assets/noter-app-home.png', 'صفحه اصلی اپلیکیشن Noter در دسکتاپ'],
-              ['/assets/noter-app-auth-mobile.png', 'صفحه ورود اپلیکیشن Noter در موبایل'],
-              ['/assets/noter-app-home-mobile.png', 'صفحه اصلی اپلیکیشن Noter در موبایل'],
+              {
+                src: '/assets/noter-app-auth.png',
+                alt: 'صفحه ورود اپلیکیشن Noter در دسکتاپ',
+              },
+              {
+                src: '/assets/noter-app-home.png',
+                alt: 'صفحه اصلی اپلیکیشن Noter در دسکتاپ',
+              },
+              {
+                src: '/assets/noter-app-auth-mobile.png',
+                alt: 'صفحه ورود اپلیکیشن Noter در موبایل',
+              },
+              {
+                src: '/assets/noter-app-home-mobile.png',
+                alt: 'صفحه اصلی اپلیکیشن Noter در موبایل',
+              },
             ]}
           ></carousel-widget>
         </section-widget>

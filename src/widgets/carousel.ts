@@ -4,7 +4,7 @@ import { css, html, WidgetTemplate } from 'nexwidget';
 import './openable-image.js';
 import { OpenableImageWidget } from './openable-image.js';
 
-export type CarouselImage = [src: string, alt: string];
+export type CarouselImage = { src: string; alt: string };
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -63,8 +63,8 @@ export class CarouselWidget extends Nexinterface {
       <div class="images-container">
         ${repeat(
           this.images!,
-          ([src]) => src,
-          ([src, alt]) =>
+          ({ src }) => src,
+          ({ src, alt }) =>
             html`
               <openable-image-widget
                 @click=${(event: MouseEvent) =>
