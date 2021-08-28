@@ -16,6 +16,11 @@ export interface ExternalLinkComponent {
 }
 
 export class ExternalLinkComponent extends Nexinterface {
+  static {
+    this.createAttributes([{ key: 'link', type: 'string' }]);
+    this.registerAs('external-link-component');
+  }
+
   static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -26,6 +31,10 @@ export class ExternalLinkComponent extends Nexinterface {
         }
       `,
     ];
+  }
+
+  override get template(): WidgetTemplate {
+    return html`<slot></slot>`;
   }
 
   override addedCallback() {
@@ -48,11 +57,4 @@ export class ExternalLinkComponent extends Nexinterface {
       { signal: this.removedSignal },
     );
   }
-
-  override get template(): WidgetTemplate {
-    return html`<slot></slot>`;
-  }
 }
-
-ExternalLinkComponent.createAttributes([{ key: 'link', type: 'string' }]);
-ExternalLinkComponent.registerAs('external-link-component');

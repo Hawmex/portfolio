@@ -18,6 +18,11 @@ export interface CarouselWidget {
 }
 
 export class CarouselWidget extends Nexinterface {
+  static {
+    this.createReactives(['images']);
+    this.registerAs('carousel-widget');
+  }
+
   static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -81,6 +86,3 @@ export class CarouselWidget extends Nexinterface {
     `;
   }
 }
-
-CarouselWidget.createReactives(['images']);
-CarouselWidget.registerAs('carousel-widget');

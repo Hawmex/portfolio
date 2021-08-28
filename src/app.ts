@@ -19,6 +19,10 @@ declare global {
 }
 
 export class AppWidget extends AppScaffold {
+  static {
+    this.registerAs('app-widget');
+  }
+
   static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -258,5 +262,3 @@ export class AppWidget extends AppScaffold {
     `;
   }
 }
-
-AppWidget.registerAs('app-widget');

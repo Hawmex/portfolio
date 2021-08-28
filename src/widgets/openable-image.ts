@@ -22,6 +22,17 @@ export interface OpenableImageWidget {
 }
 
 export class OpenableImageWidget extends Nexinterface {
+  static {
+    this.createAttributes([
+      { key: 'active', type: 'boolean' },
+      { key: 'src', type: 'string' },
+      { key: 'alt', type: 'string' },
+    ]);
+    
+    this.createReactives(['active', 'src', 'alt']);
+    this.registerAs('openable-image-widget');
+  }
+
   static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
@@ -126,12 +137,3 @@ export class OpenableImageWidget extends Nexinterface {
     `;
   }
 }
-
-OpenableImageWidget.createAttributes([
-  { key: 'active', type: 'boolean' },
-  { key: 'src', type: 'string' },
-  { key: 'alt', type: 'string' },
-]);
-
-OpenableImageWidget.createReactives(['active', 'src', 'alt']);
-OpenableImageWidget.registerAs('openable-image-widget');
