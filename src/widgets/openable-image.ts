@@ -1,8 +1,8 @@
-import { Nexinterface } from 'nexinterface/dist/base/base.js';
-import 'nexinterface/dist/scrim/scrim.js';
-import 'nexinterface/dist/typography/typography.js';
-import 'nexinterface/dist/button/button.js';
-import { css, html, WidgetTemplate } from 'nexwidget';
+import { Nexinterface } from 'nexinterface/base/base.js';
+import 'nexinterface/scrim/scrim.js';
+import 'nexinterface/typography/typography.js';
+import 'nexinterface/button/button.js';
+import { css, html, WidgetTemplate } from 'nexwidget/nexwidget.js';
 
 declare global {
   interface HTMLElementTagNameMap {

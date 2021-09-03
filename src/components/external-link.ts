@@ -1,8 +1,8 @@
-import { Nexinterface } from 'nexinterface/dist/base/base.js';
-import { addDialog } from 'nexinterface/dist/dialog/dialog.js';
-import 'nexinterface/dist/section/section.js';
-import 'nexinterface/dist/typography/typography.js';
-import { css, html, WidgetTemplate } from 'nexwidget';
+import { Nexinterface } from 'nexinterface/base/base.js';
+import { addDialog } from 'nexinterface/dialog/dialog.js';
+import 'nexinterface/section/section.js';
+import 'nexinterface/typography/typography.js';
+import { css, html, WidgetTemplate } from 'nexwidget/nexwidget.js';
 
 declare global {
   interface HTMLElementTagNameMap {

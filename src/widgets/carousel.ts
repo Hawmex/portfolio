@@ -1,6 +1,6 @@
 import { repeat } from 'lit-html/directives/repeat.js';
-import { Nexinterface } from 'nexinterface/dist/base/base.js';
-import { css, html, WidgetTemplate } from 'nexwidget';
+import { Nexinterface } from 'nexinterface/base/base.js';
+import { css, html, WidgetTemplate } from 'nexwidget/nexwidget.js';
 import './openable-image.js';
 import { OpenableImageWidget } from './openable-image.js';
 
