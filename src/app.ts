@@ -32,8 +32,6 @@ export class AppWidget extends AppScaffold {
           align-items: center;
           justify-content: center;
           background-color: var(--surfaceColor);
-
-          --primaryColor: #26a69a;
         }
 
         :host .github-button {
