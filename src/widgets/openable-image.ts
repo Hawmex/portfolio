@@ -87,8 +87,8 @@ export class OpenableImageWidget extends Nexinterface {
           align-items: center;
           display: flex;
           gap: 16px;
-          background-color: var(--onSurfaceColor);
-          color: var(--surfaceColor);
+          background-color: var(--surfaceColor);
+          color: var(--onSurfaceColor);
           visibility: hidden;
           transform: translateY(-100%);
           will-change: transform;
