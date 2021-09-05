@@ -1,7 +1,7 @@
 import { Nexinterface } from 'nexinterface/base/base.js';
+import 'nexinterface/button/button.js';
 import 'nexinterface/scrim/scrim.js';
 import 'nexinterface/typography/typography.js';
-import 'nexinterface/button/button.js';
 import { css, html, WidgetTemplate } from 'nexwidget/nexwidget.js';
 
 declare global {
