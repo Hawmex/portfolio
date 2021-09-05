@@ -43,7 +43,7 @@ export class ExternalLinkComponent extends Nexinterface {
       'click',
       () =>
         addDialog({
-          headline: 'لینک زیر باز شود؟',
+          headline: 'توجه',
           body: html`
             <section-widget variant="paragraphs">
               <typography-widget dir="auto" variant="text">${this.link}</typography-widget>
