@@ -20,7 +20,7 @@ export class ExternalLinkComponent extends Nexinterface {
     this.createAttributes([{ key: 'link', type: 'string' }]);
     this.registerAs('external-link-component');
   }
-
+  
   static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,
