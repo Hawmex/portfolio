@@ -46,6 +46,7 @@ export class ExternalLinkComponent extends Nexinterface {
           headline: 'توجه',
           body: html`
             <section-widget variant="paragraphs">
+              <typography-widget variant="text">لینک زیر باز شود؟</typography-widget>
               <typography-widget dir="auto" variant="text">${this.link}</typography-widget>
             </section-widget>
           `,
