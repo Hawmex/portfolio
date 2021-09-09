@@ -12,8 +12,6 @@ export class AppProvider extends Nexinterface {
   static {
     this.registerAs('app-provider');
   }
-
-  usesNexwidget1: true = true;
   
   override get template(): WidgetTemplate {
     return html`<app-widget dir="rtl"></app-widget>`;
