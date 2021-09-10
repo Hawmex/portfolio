@@ -22,7 +22,7 @@ export class CarouselWidget extends Nexinterface {
     this.createReactives(['images']);
     this.registerAs('carousel-widget');
   }
-  
+
   static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,

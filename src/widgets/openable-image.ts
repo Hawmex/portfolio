@@ -28,11 +28,11 @@ export class OpenableImageWidget extends Nexinterface {
       { key: 'src', type: 'string' },
       { key: 'alt', type: 'string' },
     ]);
-    
+
     this.createReactives(['active', 'src', 'alt']);
     this.registerAs('openable-image-widget');
   }
-  
+
   static override get styles(): CSSStyleSheet[] {
     return [
       ...super.styles,

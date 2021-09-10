@@ -4,7 +4,7 @@
   "description": "My portfolio website.",
   "private": true,
   "scripts": {
-    "prod": "npx tsc",
+    "prod": "npx tsc && npx prettier public/build/**/*.{js,d.ts} --write",
     "dev:server": "cd public && npx live-server",
     "dev:tsc": "npx tsc --watch"
   },
@@ -20,10 +20,11 @@
   "homepage": "https://github.com/Hawmex/portfolio#readme",
   "dependencies": {
     "lit-html": "^1.4.1",
-    "nexinterface": "^3.3.21",
-    "nexwidget": "^5.1.13"
+    "nexinterface": "^4.0.1",
+    "nexwidget": "^6.0.0"
   },
   "devDependencies": {
+    "prettier": "^2.4.0",
     "typescript": "^4.4.2"
   }
 }
