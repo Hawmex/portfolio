@@ -135,7 +135,7 @@ export class AppWidget extends AppScaffold {
           ></openable-image-widget>
         </div>
         <section-widget variant="paragraphs">
-          <typography-widget variant="top-bar">حامد اعراب</typography-widget>
+          <typography-widget variant="app-bar">حامد اعراب</typography-widget>
           <typography-widget style="text-align: justify" variant="text">
             سلام. من حامد اعراب، دانشجوی کارشناسی مهندسی صنایع در دانشگاه صنعتی امیرکبیر هستم. سه
             سال هست که توسعه‌دهندگی وب در بخش‌های فرانت‌اند و بک‌اند رو شروع کردم و یک ساله که به
