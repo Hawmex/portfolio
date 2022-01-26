@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/Hawmex/portfolio#readme",
   "dependencies": {
-    "lit-html": "^2.0.0",
-    "nexinterface": "^5.1.16",
-    "nexwidget": "^6.0.10"
+    "lit-html": "^2.1.2",
+    "nexinterface": "^6.0.1",
+    "nexwidget": "^7.0.2"
   },
   "devDependencies": {
     "prettier": "^2.4.1",

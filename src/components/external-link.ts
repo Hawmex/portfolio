@@ -1,5 +1,5 @@
 import { Nexinterface } from 'nexinterface/base/base.js';
-import { addDialog } from 'nexinterface/dialog/dialog.js';
+import { dialogStore } from 'nexinterface/dialog/dialog.js';
 import 'nexinterface/section/section.js';
 import 'nexinterface/typography/typography.js';
 import { css, html, WidgetTemplate } from 'nexwidget/nexwidget.js';
@@ -42,7 +42,7 @@ export class ExternalLinkComponent extends Nexinterface {
     this.addEventListener(
       'click',
       () =>
-        addDialog({
+        dialogStore.pushQueue({
           headline: 'لینک زیر باز شود؟',
           body: html`
             <section-widget variant="paragraphs">
