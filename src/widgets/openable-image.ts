@@ -62,8 +62,10 @@ export class OpenableImageWidget extends Nexinterface {
           visibility: hidden;
           transform: translate(50%, -50%) scale(0.9);
           will-change: opacity, transform;
-          transition: opacity calc(var(--durationLvl2) - 50ms) var(--deceleratedEase),
-            transform 0ms var(--deceleratedEase) calc(var(--durationLvl2) - 50ms),
+          transition: opacity calc(var(--durationLvl2) - 50ms)
+              var(--deceleratedEase),
+            transform 0ms var(--deceleratedEase)
+              calc(var(--durationLvl2) - 50ms),
             visibility calc(var(--durationLvl2) - 50ms) var(--deceleratedEase);
         }
 
@@ -92,7 +94,8 @@ export class OpenableImageWidget extends Nexinterface {
           visibility: hidden;
           transform: translateY(-100%);
           will-change: transform;
-          transition: transform calc(var(--durationLvl2) - 50ms) var(--deceleratedEase),
+          transition: transform calc(var(--durationLvl2) - 50ms)
+              var(--deceleratedEase),
             visibility calc(var(--durationLvl2) - 50ms) var(--deceleratedEase);
         }
 

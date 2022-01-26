@@ -104,7 +104,10 @@ export class AppWidget extends AppScaffold {
       <dialog-widget></dialog-widget>
       <div class="wrapper">
         <section-widget variant="buttons">
-          <external-link-component slot="leading" link="mailto:itshawmex@gmail.com">
+          <external-link-component
+            slot="leading"
+            link="mailto:itshawmex@gmail.com"
+          >
             <button-widget
               style="--primaryColor: #ff1744"
               variant="text"
@@ -118,7 +121,10 @@ export class AppWidget extends AppScaffold {
               icon="telegram"
             ></button-widget>
           </external-link-component>
-          <external-link-component slot="trailing" link="https://github.com/Hawmex">
+          <external-link-component
+            slot="trailing"
+            link="https://github.com/Hawmex"
+          >
             <button-widget
               class="github-button"
               variant="solid"
@@ -137,19 +143,21 @@ export class AppWidget extends AppScaffold {
         <section-widget variant="paragraphs">
           <typography-widget variant="app-bar">حامد اعراب</typography-widget>
           <typography-widget style="text-align: justify" variant="text">
-            سلام. من حامد اعراب، دانشجوی کارشناسی مهندسی صنایع در دانشگاه صنعتی امیرکبیر هستم. سه
-            سال هست که توسعه‌دهندگی وب در بخش‌های فرانت‌اند و بک‌اند رو شروع کردم و یک ساله که به
-            صورت جدی اون رو دنبال می‌کنم.
+            سلام. من حامد اعراب، دانشجوی کارشناسی مهندسی صنایع در دانشگاه صنعتی
+            امیرکبیر هستم. سه سال هست که توسعه‌دهندگی وب در بخش‌های فرانت‌اند و
+            بک‌اند رو شروع کردم و یک ساله که به صورت جدی اون رو دنبال می‌کنم.
           </typography-widget>
           <typography-widget style="text-align: justify" variant="text">
-            به تازگی پکیج‌های nexbounce, nexstate, nexwidget, & nexinterface رو در npm منتشر کردم و
-            نگهداری می‌کنم. nexbounce برای debounce کردن task های سنگین استفاده میشه. nexstate هم یک
-            state manager غیرمتمرکز هست. nexwidget هم برای توسعه کامپوننت‌های وب نوشته شده. و در
-            نهایت nexinterface هم مجموعه‌ای از ویجت‌های طراحی material هست که با استفاده از
-            nexwidget توسعه داده شده.
+            به تازگی پکیج‌های nexbounce, nexstate, nexwidget, & nexinterface رو
+            در npm منتشر کردم و نگهداری می‌کنم. nexbounce برای debounce کردن
+            task های سنگین استفاده میشه. nexstate هم یک state manager غیرمتمرکز
+            هست. nexwidget هم برای توسعه کامپوننت‌های وب نوشته شده. و در نهایت
+            nexinterface هم مجموعه‌ای از ویجت‌های طراحی material هست که با
+            استفاده از nexwidget توسعه داده شده.
           </typography-widget>
           <typography-widget style="text-align: justify" variant="text">
-            همچنین تسلط خوبی به زبان انگلیسی دارم و مستندات به زبان انگلیسی رو به خوبی متوجه میشم.
+            همچنین تسلط خوبی به زبان انگلیسی دارم و مستندات به زبان انگلیسی رو
+            به خوبی متوجه میشم.
           </typography-widget>
         </section-widget>
         <section-widget variant="paragraphs">
@@ -188,7 +196,9 @@ export class AppWidget extends AppScaffold {
             <chip-widget text="توسعه Full-Stack"></chip-widget>
             <chip-widget text="نمره کامل PWA"></chip-widget>
             <chip-widget text="رابط کاربری Material"></chip-widget>
-            <chip-widget text="Dark Mode خودکار و هماهنگ با دستگاه"></chip-widget>
+            <chip-widget
+              text="Dark Mode خودکار و هماهنگ با دستگاه"
+            ></chip-widget>
             <chip-widget text="تجربه‌ی کاربری نزدیک به Native"></chip-widget>
             <chip-widget text="متصل به درگاه پرداخت IDPay"></chip-widget>
             <chip-widget text="ExpressJS"></chip-widget>
